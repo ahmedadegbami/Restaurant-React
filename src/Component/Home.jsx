@@ -1,8 +1,6 @@
 import { Carousel, Container, Row, Col, ListGroup } from "react-bootstrap";
 import dishes from "../Data/Menu.json";
 import { Component } from "react";
-import ReservationForm from "./ReservationForm";
-import ReservationList from "./ResevationList";
 
 class Home extends Component {
   state = {
@@ -12,8 +10,6 @@ class Home extends Component {
   render() {
     return (
       <Container className="my-3">
-        <ReservationList />
-        <ReservationForm />
         <Row className="justify-content-center">
           <Col md={6}>
             <Carousel onSlide={() => this.setState({ selectedPasta: null })}>
@@ -25,6 +21,7 @@ class Home extends Component {
                     alt="Third slide"
                     onClick={(e) => this.setState({ selectedPasta: dish })}
                   />
+
                   <Carousel.Caption>
                     <h3>{dish.name}</h3>
                     <p>{dish.description}</p>
